@@ -82,8 +82,8 @@ body {
     }
     .btn {
         display: block !important;
-        flex: 30%;
-        margin: 5px;
+        flex: 50%;
+        margin: 4px;
     }
 }
 
