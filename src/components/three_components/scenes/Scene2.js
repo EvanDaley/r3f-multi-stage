@@ -26,7 +26,7 @@ export default function Scene({ sceneIndex }) {
       {/* <color attach="background" args={"black"} /> */}
 
       <Stage adjustCamera={false} contactShadow={true} shadows={true} >
-        <Environment preset={environmentOptions[4]} background={false}/>
+        {/* <Environment preset={environmentOptions[4]} background={false}/> */}
 
         <OxygenContainer2 rotation={[0, 80, 0]} />
         <AbstractSphere animationOffset={[0, 2, 0]} color="#bbbbbb" />

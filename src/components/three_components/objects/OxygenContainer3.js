@@ -33,7 +33,7 @@ export default function OxygenContainer3(props) {
   const { nodes, materials } = useGLTF(filePath)
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh
+      <mesh 
         castShadow
         receiveShadow
         geometry={nodes.Container.geometry}

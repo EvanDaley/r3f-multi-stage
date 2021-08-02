@@ -23,7 +23,7 @@ export default function Scene({ sceneIndex }) {
 
   return (
     <>
-      <Stage adjustCamera={false} environment={environmentOptions[0]} intensity={.5} contactShadow={true} shadows={true}>
+      <Stage adjustCamera={false} intensity={.5} contactShadow={true} shadows={true}>
         <OxygenContainer3 rotation={[0, 90, 0]} position={[12, 0, 0]} />
         <AbstractSphere scale={[0.7, 0.7, 0.7]} animationOffset={[6, 2, 0]} color="red" />
       </Stage>
