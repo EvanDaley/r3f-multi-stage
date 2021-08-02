@@ -9,6 +9,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 
 export default function Scene({ sceneIndex }) {
   const environmentOptions = [
+    'park',
     'sunset',
     'dawn',
     'night',
@@ -17,7 +18,6 @@ export default function Scene({ sceneIndex }) {
     'apartment',
     'studio',
     'city',
-    'park',
     'lobby',
   ]
 

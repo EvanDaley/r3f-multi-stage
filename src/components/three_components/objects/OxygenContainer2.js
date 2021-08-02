@@ -36,15 +36,6 @@ export default function OxygenContainer2(props) {
         geometry={nodes.Container.geometry}
         material={materials['Material.003']}
       />
-      {/* <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Plant.geometry}
-        material={materials['Material.004']}
-        position={[0.1, 2.21, -0.25]}
-        rotation={[-0.38, -0.26, -0.11]}
-        scale={[0.33, 0.33, 0.33]}
-      /> */}
       <mesh
         castShadow
         receiveShadow
@@ -53,15 +44,6 @@ export default function OxygenContainer2(props) {
       >
         <meshPhysicalMaterial {...materialProps}  />
       </mesh>
-      {/* <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.GlassDome.geometry}
-        material={materials.Glass}
-      >
-        <meshPhysicalMaterial {...materialProps} side={THREE.BackSide} />
-      </mesh> */}
-
       <mesh
         castShadow
         receiveShadow
@@ -69,13 +51,6 @@ export default function OxygenContainer2(props) {
         material={materials['Material.002']}
         position={[0, 0.01, 0]}
       />
-      {/* <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Container002.geometry}
-        material={nodes.Container002.material}
-        position={[0, 0.01, 0]}
-      /> */}
     </group>
   )
 }

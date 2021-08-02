@@ -9,13 +9,13 @@ import React, { useState, useEffect, Suspense } from 'react';
 
 export default function Scene({ sceneIndex }) {
   const environmentOptions = [
+    'studio',
     'sunset',
     'dawn',
     'night',
     'warehouse',
     'forest',
     'apartment',
-    'studio',
     'city',
     'park',
     'lobby',
