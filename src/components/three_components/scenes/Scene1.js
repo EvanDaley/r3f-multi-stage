@@ -7,19 +7,27 @@ import { OrbitControls, Stats, Stage, Loader, PerspectiveCamera } from '@react-t
 import { Canvas } from '@react-three/fiber';
 import React, { useState, useEffect, Suspense } from 'react';
 
+import { useControls } from "leva"
+
 export default function Scene({ sceneIndex }) {
-  const environmentOptions = [
-    'sunset',
-    'dawn',
-    'night',
-    'warehouse',
-    'forest',
-    'apartment',
-    'studio',
-    'city',
-    'park',
-    'lobby',
-  ]
+  const environmentControls = {
+    value: 'sunset',
+    hint: 'Add Typescript definitions',
+    options: [
+      'sunset',
+      'dawn',
+      'night',
+      'warehouse',
+      'forest',
+      'apartment',
+      'studio',
+      'city',
+      'park',
+      'lobby',
+    ],
+  }
+
+  const { environment } = useControls('environment/lighting', { hdri: environmentControls })
 
   return (
     <>
@@ -27,7 +35,8 @@ export default function Scene({ sceneIndex }) {
       {/* <ambientLight /> */}
       {/* <pointLight position={[10, 10, 10]} /> */}
 
-      <Stage adjustCamera={false} environment={environmentOptions[0]} intensity={.5} contactShadow={true} shadows={true}>
+      <Stage adjustCamera={false} environment={environment} intensity={1} contactShadow={true} shadows={true}>
+        {/* <Stage adjustCamera={false} environment={environmentOptions[0]} intensity={.5} contactShadow={true} shadows={true}> */}
         {/* <OxygenContainer position={[-6, 0, 0]} rotation={[0, 90, 0]} />
         <AbstractSphere animationOffset={[-6, 2, 0]} color="black" />
         <AbstractSphere scale={[0.7, 0.7, 0.7]} animationOffset={[-6, 2, 0]} color="black" />

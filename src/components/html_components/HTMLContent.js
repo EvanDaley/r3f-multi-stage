@@ -15,10 +15,10 @@ function Navigation() {
     <>
       <div className='button-overlay'>
         <div className='flex-container' style={{justifyContent: "space-around"}}>
-          <button className="btn" onClick={selectScene0}>frontend</button>
-          <button className="btn" onClick={selectScene1}>backend</button>
-          <button className="btn" onClick={selectScene2}>analytics</button>
-          <button className="btn" onClick={selectScene3}>dev ops</button>
+          <button className="btn" onClick={selectScene0}>sandbox 1</button>
+          <button className="btn" onClick={selectScene1}>sandbox 2</button>
+          <button className="btn" onClick={selectScene2}>sandbox 3</button>
+          <button className="btn" onClick={selectScene3}>sandbox 4</button>
         </div>
       </div>
     </>
