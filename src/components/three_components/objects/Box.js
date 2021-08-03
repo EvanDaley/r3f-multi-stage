@@ -32,7 +32,7 @@ export default function Box(props) {
       // onClick={(event) => setActive(!active)}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
-      <icosahedronBufferGeometry args={[1, 1, 1]} />
+      <boxBufferGeometry args={[1, 1, 1]} />
       <animated.meshStandardMaterial color={color} />
     </animated.mesh>
   )

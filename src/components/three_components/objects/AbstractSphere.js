@@ -15,8 +15,8 @@ export default function AbstractSphere(props) {
   const randomRotationOffset = Math.random() * 180
 
   useEffect(() => {
-    group.current.position.x = props.animationOffset[0]
-    group.current.position.z = props.animationOffset[2]
+    group.current.position.x = props.animationOffset ? props.animationOffset[0] : 0
+    group.current.position.z = props.animationOffset ? props.animationOffset[2] : 0
     group.current.rotation.x = randomRotationOffset
     group.current.rotation.y = randomRotationOffset
     group.current.rotation.z = randomRotationOffset
@@ -24,7 +24,7 @@ export default function AbstractSphere(props) {
 
   useFrame(({ clock }) => {
     const t = (1 + Math.sin(clock.getElapsedTime() * 1.5)) / 2
-    group.current.position.y = (t / 3) + props.animationOffset[1]
+    group.current.position.y = (t / 3) + props.animationOffset ? props.animationOffset[1] : 0
     group.current.rotation.x = group.current.rotation.z += 0.005
   })
 
