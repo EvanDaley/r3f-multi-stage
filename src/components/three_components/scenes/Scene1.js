@@ -1,9 +1,5 @@
-import LinesRobot from '../objects/LinesRobot'
-import OxygenContainer from '../objects/OxygenContainer'
+import LowPolyJet from '../objects/LowPolyJet'
 import WobblyTorus from '../objects/WobblyTorus'
-import OxygenContainer2 from '../objects/OxygenContainer2'
-import OxygenContainer3 from '../objects/OxygenContainer3'
-import AbstractSphere from '../objects/AbstractSphere'
 import { OrbitControls, Stats, Stage, Loader, PerspectiveCamera, Environment, useTexture } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React, { useState, useEffect, Suspense } from 'react';
@@ -38,8 +34,7 @@ export default function Scene({ sceneIndex }) {
         <Suspense fallback={null}>
           <Environment preset={hdri} background={false} />
         </Suspense>
-        <OxygenContainer3 rotation={[0, 90, 0]} position={[6, 0, 0]} />
-        <WobblyTorus animationOffset={[6, 2, 0]} />
+        <LowPolyJet />
       </Stage>
     </>
   );

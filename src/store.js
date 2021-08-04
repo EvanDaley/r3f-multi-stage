@@ -1,7 +1,7 @@
 import create from 'zustand'
 
 const useStore = create(set => ({
-  sceneIndex: 1,
+  sceneIndex: 0,
   selectScene0: () => set(() => {
     console.log("HERE")
     return { sceneIndex: 0 }
