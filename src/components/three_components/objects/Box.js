@@ -30,7 +30,10 @@ export default function Box(props) {
       ref={meshRef}
       scale={scale}
       // onClick={(event) => setActive(!active)}
-      onPointerOver={(event) => setHover(true)}
+      onPointerOver={(event) => {
+        setHover(true)
+        console.log(meshRef.current.position)
+      }}
       onPointerOut={(event) => setHover(false)}>
       <boxBufferGeometry args={[1, 1, 1]} />
       <animated.meshStandardMaterial color={color} />
