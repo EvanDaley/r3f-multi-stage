@@ -48,14 +48,18 @@ function TheModel() {
     shipRef.current = groupRef.current.children.find(item => item.name === 'Ship')
     targetRef.current = groupRef.current.children.find(item => item.name === 'CameraTarget')
     camPositionRef.current = groupRef.current.children.find(item => item.name === 'CamPosition')
+
+    console.log(targetRef.current)
   })
 
   useFrame((state, delta) => {
-    mixer.update(delta / 10);
+    mixer.update(delta);
     state.camera.lookAt(targetRef.current.position)
     state.camera.position.x = camPositionRef.current.position.x
     state.camera.position.y = camPositionRef.current.position.y
     state.camera.position.z = camPositionRef.current.position.z
+
+    // console.log(targetRef.current.position)
 
     targetRef.current.scale.x = .001
     targetRef.current.scale.y = .001

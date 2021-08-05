@@ -32,6 +32,8 @@ export default function Scene({ sceneIndex }) {
 
   const { hdri } = useControls('environment/lighting', { hdri: environmentControls })
 
+  console.log(hdri)
+
   return (
     <>
       <PerspectiveCamera makeDefault />
@@ -39,19 +41,8 @@ export default function Scene({ sceneIndex }) {
 
       <Stage adjustCamera={false} contactShadow={true} shadows={true}>
 
-        <Box position={[0,0,-30]}/>
-        <Box position={[0,0,-20]}/>
-        <Box position={[0,0,-10]}/>
-        <Box position={[0,0,0]}/>
-        <Box position={[0,0,10]}/>
-        <Box position={[0,0,20]}/>
-        <Box position={[0,0,30]}/>
-        <Box position={[0,0,40]}/>
-        <Box position={[0,0,50]}/>
-        <Box position={[0,0,60]}/>
-        <Box position={[0,0,70]}/>
-        <Box position={[0,0,80]}/>
-        <Box position={[0,0,90]}/>
+        {/* <Box position={[0,0,-20]}/> */}
+        {/* <Box position={[0,0,-30]}/> */}
 
         <Suspense fallback={null}>
           <Environment preset={hdri} background={false} />

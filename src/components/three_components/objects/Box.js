@@ -19,9 +19,9 @@ export default function Box(props) {
 
   // Rotate mesh every frame, this is outside of React without overhead
   useFrame(() => {
-    if (meshRef.current != null) {
-      meshRef.current.rotation.x = meshRef.current.rotation.y += 0.01
-    }
+    // if (meshRef.current != null) {
+      // meshRef.current.rotation.x = meshRef.current.rotation.y += 0.01
+    // }
   })
 
   return (
