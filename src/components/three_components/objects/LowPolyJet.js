@@ -25,10 +25,8 @@ function TheModel() {
 }
 
 export default function Model(props) {
-  const group = useRef()
-
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group {...props} dispose={null}>
       <Suspense fallback={null}>
         <TheModel />
       </Suspense>

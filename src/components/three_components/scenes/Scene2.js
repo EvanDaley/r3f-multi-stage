@@ -23,16 +23,20 @@ export default function Scene({ sceneIndex }) {
 
   return (
     <>
+      <PerspectiveCamera makeDefault position={[0, 4, 13]} />
+
       {/* <directionalLight position={[-10, -10, -5]} intensity={1} /> */}
       {/* <ambientLight /> */}
       {/* <pointLight position={[10, 10, 10]} /> */}
 
       <Stage adjustCamera={false} intensity={.5} contactShadow={true} shadows={true}>
+        <OrbitControls target={[1, 1, 0]} />
+
         <OxygenContainer position={[-6, 0, 0]} rotation={[0, 90, 0]} />
         <AbstractSphere animationOffset={[-6, 2, 0]} color="black" />
         <AbstractSphere scale={[0.7, 0.7, 0.7]} animationOffset={[-6, 2, 0]} color="black" />
 
-       {/*  <OxygenContainer2 rotation={[0, 80, 0]} />
+        {/*  <OxygenContainer2 rotation={[0, 80, 0]} />
         <AbstractSphere animationOffset={[0, 2, 0]} color="#bbbbbb" />
         <AbstractSphere scale={[0.7, 0.7, 0.7]} animationOffset={[0, 2, 0]} color="#bbbbbb" /> 
 

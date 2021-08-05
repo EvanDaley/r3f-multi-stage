@@ -28,8 +28,8 @@ export default function ThreeCanvas() {
         </Suspense>
 
         {/* <Stats /> */}
-        <PerspectiveCamera makeDefault position={[8, 4, 13]} />
-        <OrbitControls target={[1, 1, 0]} />
+
+
 
       </Canvas>
 
