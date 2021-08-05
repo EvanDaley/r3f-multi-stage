@@ -1,4 +1,5 @@
 import LowPolyJet from '../objects/LowPolyJet'
+import AnimationExperiment from '../objects/AnimationExperiment'
 import WobblyTorus from '../objects/WobblyTorus'
 import { OrbitControls, Stats, Stage, Loader, PerspectiveCamera, Environment, useTexture } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
@@ -34,7 +35,8 @@ export default function Scene({ sceneIndex }) {
         <Suspense fallback={null}>
           <Environment preset={hdri} background={false} />
         </Suspense>
-        <LowPolyJet />
+        {/* <LowPolyJet /> */}
+        <AnimationExperiment/>
       </Stage>
     </>
   );
