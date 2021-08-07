@@ -184,3 +184,86 @@ body {
 .default:hover {
     background: #e7e7e7;
 }
+
+/* VideoSandbox */
+/* * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+} */
+
+#myVideo {
+  position: fixed;
+  width:100%;     
+  height: auto;
+  top: 0;
+
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #myVideo {
+    width:auto  ;
+    min-height: 100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #myVideo { 
+    height: 100%;
+  }
+}
+/* 
+@media (max-width: 1600px) {
+  #myVideo { 
+    left: -400px
+  }
+}
+
+@media (max-width: 1200px) {
+  #myVideo { 
+    left: -600px
+  }
+}
+
+@media (max-width: 800px) {
+  #myVideo { 
+    left: -700px
+  }
+}
+
+@media (max-width: 600px) {
+  #myVideo { 
+    left: -700px
+  }
+} */
+
+/* .content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+} */
