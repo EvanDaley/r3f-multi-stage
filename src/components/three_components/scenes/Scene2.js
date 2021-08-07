@@ -2,47 +2,39 @@ import LinesRobot from '../objects/LinesRobot'
 import OxygenContainer from '../objects/OxygenContainer'
 import OxygenContainer2 from '../objects/OxygenContainer2'
 import OxygenContainer3 from '../objects/OxygenContainer3'
+import WobblyTorus from '../objects/WobblyTorus'
 import AbstractSphere from '../objects/AbstractSphere'
-import { OrbitControls, Stats, Stage, Loader, PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls, Stats, Stage, Loader, PerspectiveCamera, Environment, useTexture } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React, { useState, useEffect, Suspense } from 'react';
+import { useControls } from "leva"
 
 export default function Scene({ sceneIndex }) {
-  const environmentOptions = [
-    'studio',
-    'sunset',
-    'dawn',
-    'night',
-    'warehouse',
-    'forest',
-    'apartment',
-    'city',
-    'park',
-    'lobby',
-  ]
+  const environmentControls = {
+    hint: 'HDRI Lighting',
+    options: [
+      'city',
+      'sunset',
+      'forest',
+    ],
+    value: 'city',
+  }
+
+  const { hdri } = useControls('environment/lighting', { hdri: environmentControls })
 
   return (
     <>
       <PerspectiveCamera makeDefault position={[0, 4, 13]} />
 
-      {/* <directionalLight position={[-10, -10, -5]} intensity={1} /> */}
-      {/* <ambientLight /> */}
-      {/* <pointLight position={[10, 10, 10]} /> */}
-
       <Stage adjustCamera={false} intensity={.5} contactShadow={true} shadows={true}>
         <OrbitControls target={[1, 1, 0]} />
 
-        <OxygenContainer position={[-6, 0, 0]} rotation={[0, 90, 0]} />
-        <AbstractSphere animationOffset={[-6, 2, 0]} color="black" />
-        <AbstractSphere scale={[0.7, 0.7, 0.7]} animationOffset={[-6, 2, 0]} color="black" />
+        <OxygenContainer3 position={[0, 0, 0]}/>
+        <WobblyTorus position={[0, 2.5, 0]} rotation={[0, 90, 0]} />
 
-        {/*  <OxygenContainer2 rotation={[0, 80, 0]} />
-        <AbstractSphere animationOffset={[0, 2, 0]} color="#bbbbbb" />
-        <AbstractSphere scale={[0.7, 0.7, 0.7]} animationOffset={[0, 2, 0]} color="#bbbbbb" /> 
-
-        <OxygenContainer3 rotation={[0, 90, 0]} position={[6, 0, 0]} />
-        <AbstractSphere animationOffset={[6, 2, 0]} color="red" />
-        <AbstractSphere scale={[0.7, 0.7, 0.7]} animationOffset={[6, 2, 0]} color="red" />*/}
+        <Suspense fallback={null}>
+          <Environment preset={hdri} background={false} />
+        </Suspense>
       </Stage>
     </>
   );
