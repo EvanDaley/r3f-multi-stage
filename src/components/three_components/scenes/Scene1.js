@@ -10,20 +10,15 @@ import { useControls } from "leva"
 export default function Scene({ sceneIndex }) {
   return (
     <>
-      <PerspectiveCamera makeDefault position={[0, 1, 5]} />
-      {/* <OrbitControls target={[1, 1, 0]} /> */}  
+      <PerspectiveCamera makeDefault position={[0, 0, 5]} />
 
       <Stage adjustCamera={false} contactShadow={true} shadows={true}>
 
-        {/* <Box position={[0,0,0]} scale={[1,1,1]}/> */}
-        {/* <Box position={[0,0,-30]}/> */}
+        <Box position={[0,0,0]} scale={[0,0,0]}/>
 
         <Suspense fallback={null}>
           <Environment preset={'city'} background={false} />
         </Suspense>
-
-        {/* <LowPolyJet /> */}
-        {/* <AnimationExperiment /> */}
       </Stage>
     </>
   );

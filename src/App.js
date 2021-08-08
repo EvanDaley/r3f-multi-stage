@@ -8,8 +8,8 @@ import useStore from './store.js'
 function App() {
   return (
     <>
-      <HTMLContent/>
-      <ThreeCanvas/>
+      <HTMLContent />
+      <ThreeCanvas />
     </>
   );
 }
