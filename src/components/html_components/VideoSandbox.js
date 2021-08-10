@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player'
 
 export default function Navigation() {
   // const selectScene0 = useStore(state => state.selectScene0)
-  const videoPath = window.location.href + '/video/composite/abstract1.mp4'
+  const videoPath = window.location.href + '/video/composite/abstract4.mp4'
 
   return (
     <>
