@@ -10,7 +10,23 @@ function App() {
     mouseState.mouse = [(e.clientX / window.innerWidth) * 2 - 1, (e.clientY / window.innerHeight) * 2 - 1]
   }
 
-  document.addEventListener('mousemove', onDocumentPointerMove, false);
+  const switchVideos = useStore(state => state.switchVideos)
+  const videoIndex = useStore(state => state.videoIndex)
+  const videoPaths = useStore(state => state.videoPaths)
+
+  const onDocumentClick = (e) => {
+    switchVideos()
+    console.log(videoIndex)
+    console.log(videoPaths)
+  }
+
+  onDocumentClick.bind(this)
+
+  useEffect(() => {
+    console.log("HERE")
+    document.addEventListener('click', onDocumentClick, false);
+    document.addEventListener('mousemove', onDocumentPointerMove, false);
+  }, []);
 
   return (
     <>

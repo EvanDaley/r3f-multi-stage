@@ -1,14 +1,15 @@
 import useStore from '../../store'
 import ReactPlayer from 'react-player'
+import {useEffect} from 'react'
 
 export default function Navigation() {
-  // const selectScene0 = useStore(state => state.selectScene0)
-  const videoPath = window.location.href + '/video/composite/abstract4.mp4'
+  const videoIndex = useStore(state => state.videoIndex)
+  const videoPaths = useStore(state => state.videoPaths)
 
   return (
     <>
-      <video autoPlay muted loop id="myVideo">
-        <source src={videoPath} type="video/mp4" />
+      <video autoPlay muted loop id="myVideo" key={videoPaths[videoIndex]}>
+        <source src={videoPaths[videoIndex]} type="video/mp4" />
       </video>
 
       {/* <div class="content">
