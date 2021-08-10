@@ -2,14 +2,20 @@ import './App.css';
 import ThreeCanvas from './components/three_components/ThreeCanvas'
 import HTMLContent from './components/html_components/HTMLContent'
 import React, { useState, useEffect } from 'react';
-
+import mouseState from './mouseState';
 import useStore from './store.js'
 
 function App() {
+  const onDocumentPointerMove = (e) => {
+    mouseState.mouse = [(e.clientX / window.innerWidth) * 2 - 1, (e.clientY / window.innerHeight) * 2 - 1]
+  }
+
+  document.addEventListener('mousemove', onDocumentPointerMove, false);
+
   return (
     <>
-      <HTMLContent />
-      <ThreeCanvas />
+      <HTMLContent/>
+      <ThreeCanvas/>
     </>
   );
 }

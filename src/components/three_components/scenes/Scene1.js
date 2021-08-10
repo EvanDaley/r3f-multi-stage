@@ -1,5 +1,6 @@
 import LowPolyJet from '../objects/LowPolyJet'
 import Box from '../objects/Box'
+import Geo from '../objects/Geo'
 import AnimationExperiment from '../objects/AnimationExperiment'
 import WobblyTorus from '../objects/WobblyTorus'
 import { OrbitControls, Stats, Stage, Loader, PerspectiveCamera, Environment, useTexture } from '@react-three/drei';
@@ -10,16 +11,18 @@ import { useControls } from "leva"
 export default function Scene({ sceneIndex }) {
   return (
     <>
-      <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+      <PerspectiveCamera makeDefault position={[0, 0, 10]} />
 
-      <Stage adjustCamera={false} contactShadow={true} shadows={true}>
+      {/* <Stage adjustCamera={false} contactShadow={true} shadows={true}> */}
 
-        <Box position={[0,0,0]} scale={[0,0,0]}/>
+        <Geo position={[0,0,0]}/>
+        {/* <Box position={[0,0,0]}/> */}
+        {/* <Box position={[0,-10,0]}/> */}
 
         <Suspense fallback={null}>
           <Environment preset={'city'} background={false} />
         </Suspense>
-      </Stage>
+      {/* </Stage> */}
     </>
   );
 }
