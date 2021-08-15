@@ -20,13 +20,14 @@ export default function Model(props) {
     const t = (1 + Math.sin(clock.getElapsedTime() * 1.5)) / 2
     const destinationY = (t / 4) - ((mouseState.mouse[1] / 2) * yMoveFactor) + .5
     group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, destinationY, 0.05)
-
-    shadow.current.scale.y = shadow.current.scale.z = 1 + t
-    shadow.current.scale.x = 1.4 + (destinationY / 7) 
-    shadow.current.position.x = THREE.MathUtils.lerp(group.current.position.x, (mouseState.mouse[0] / 2) * xMoveFactor, 0.05)
-
     group.current.rotation.x = group.current.rotation.z += 0.005
     group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, (mouseState.mouse[0] / 2) * xMoveFactor, 0.05)
+
+    if (props.includeShadow) {
+      shadow.current.scale.y = shadow.current.scale.z = 1 + t
+      shadow.current.scale.x = 1.4 + (destinationY / 7)
+      shadow.current.position.x = THREE.MathUtils.lerp(group.current.position.x, (mouseState.mouse[0] / 2) * xMoveFactor, 0.05)
+    }
   })
 
   return (
@@ -39,7 +40,7 @@ export default function Model(props) {
           <meshBasicMaterial wireframe />
         </mesh>
       </group>
-      <Shadow ref={shadow} opacity={0.3} rotation-x={-Math.PI / 2} position={[0, -1.51, 0]} />
+      {props.includeShadow ? <Shadow ref={shadow} opacity={0.3} rotation-x={-Math.PI / 2} position={[0, -2, 0]} /> : null}
     </group>
   )
 }

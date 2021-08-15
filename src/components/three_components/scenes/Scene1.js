@@ -15,7 +15,7 @@ export default function Scene({ sceneIndex }) {
 
       {/* <Stage adjustCamera={false} contactShadow={true} shadows={true}> */}
 
-        <Geo position={[0,0,0]}/>
+        {/* <Geo position={[0,0,0]}/> */}
         {/* <Box position={[0,0,0]}/> */}
         {/* <Box position={[0,-10,0]}/> */}
 

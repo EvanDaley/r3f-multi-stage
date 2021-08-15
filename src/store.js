@@ -2,13 +2,14 @@ import create from 'zustand'
 
 const useStore = create(set => ({
   videoPaths: [
-    window.location.href + '/video/composite/abstract4.mp4',
-    window.location.href + '/video/composite/abstract1.mp4'
+    window.location.href + '/video/composite/hexagons_backward.mp4',
+    window.location.href + '/video/composite/hexagons_forward.mp4',
+    // window.location.href + '/video/composite/abstract4.mp4',
   ],
   videoIndex: 0,
   switchVideos: () => set(state => ({ 
     // videoIndex: ((state.videoIndex + 1)) 
-    videoIndex: ((state.videoIndex + 1) % (state.videoPaths.length + 1)) 
+    videoIndex: ((state.videoIndex + 1) % (state.videoPaths.length)) 
   })),
 
   sceneIndex: 0,
