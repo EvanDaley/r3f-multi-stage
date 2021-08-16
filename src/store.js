@@ -2,8 +2,9 @@ import create from 'zustand'
 
 const useStore = create(set => ({
   videoPaths: [
-    window.location.href + '/video/composite/hexagons_backward.mp4',
     window.location.href + '/video/composite/hexagons_forward.mp4',
+    window.location.href + '/video/composite/hex_hdri2.mp4',
+    window.location.href + '/video/composite/hex_hdri.mp4',
     // window.location.href + '/video/composite/abstract4.mp4',
   ],
   videoIndex: 0,
